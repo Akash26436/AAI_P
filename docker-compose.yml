@@ -14,5 +14,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  web:
+    build: .
+    container_name: memorypal_app
+    ports:
+      - "8502:8501"
+    depends_on:
+      - postgres_db
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
 volumes:
   postgres_data:
