@@ -1,9 +1,13 @@
 # 🧠 MemoryPalAI – Intelligent Knowledge Workspace
+[![CI](https://github.com/Akash26436/AAI_P/actions/workflows/ci.yml/badge.svg)](https://github.com/Akash26436/AAI_P/actions/workflows/ci.yml)
+[![Open Issues](https://img.shields.io/github/issues/Akash26436/AAI_P.svg)](https://github.com/Akash26436/AAI_P/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/Akash26436/AAI_P.svg)](https://github.com/Akash26436/AAI_P/pulls)
+
 ### Your Personal AI Tutor • Knowledge Extractor • Quiz Generator • Learning Companion
 
 **Use Our MemoryPalAI Here:** https://memorypal-app.onrender.com
 
-📦 **Tech Stack:** Streamlit • LangGraph • Gemini 2.5 Flash • Pinecone • SentenceTransformers • PyMuPDF • Python  
+📦 **Tech Stack:** Streamlit • LangGraph • Gemini 2.5 Flash • Pinecone • SentenceTransformers • PyMuPDF • Python • Docker
 
 ---
 
@@ -184,14 +188,21 @@ PINECONE_NAMESPACE=memorypal
 
 ## ▶️ Running the App
 
-### Local:
+### 🐳 The Easiest Way: Docker
+You can run the entire application (Postgres Database + Streamlit Frontend) in one command without worrying about dependencies!
+
+```bash
+# 1. Fill your .env file with your API keys and POSTGRES_PASSWORD
+# 2. Build and run the containers
+docker-compose up --build -d
+```
+Your app will be available at: **http://localhost:8502**
+
+---
+
+### Local Installation (Without Docker):
 ```bash
 streamlit run frontend/streamlit_app.py
-```
-
-### Render Deployment:
-```bash
-streamlit run frontend/streamlit_app.py --server.port=$PORT --server.address=0.0.0.0
 ```
 
 ---
